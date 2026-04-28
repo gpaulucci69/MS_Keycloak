@@ -1,12 +1,14 @@
+# Imagen base oficial
 FROM quay.io/keycloak/keycloak:latest
 
-# Copiar tus temas personalizados
-COPY themes/ /opt/keycloak/themes/
+# Copiamos la carpeta de temas de nuestro repositorio al directorio de temas de Keycloak
+COPY ./themes /opt/keycloak/themes
 
-# Definir variables de entorno para que Keycloak sepa dónde buscar
-ENV KEYCLOAK_ADMIN=admin
-ENV KEYCLOAK_ADMIN_PASSWORD=admin
-# Optimizar el build (requerido en versiones recientes)
+# Compilamos Keycloak para incluir los temas y optimizar el inicio
 RUN /opt/keycloak/bin/kc.sh build
 
+# Puerto estándar
+EXPOSE 8080
+
+# Comando de inicio
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev"]
