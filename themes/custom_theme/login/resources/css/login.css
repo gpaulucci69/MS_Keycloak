@@ -1,0 +1,35 @@
+/* login.css */
+
+/* ... (otros estilos de body y card-pf) ... */
+
+/* Actualizar el logo personalizado */
+#kc-header-wrapper {
+    /* Ocultamos el texto por defecto si es necesario */
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+#kc-logo-wrapper {
+    /* Apuntamos a tu nuevo archivo de imagen */
+    background-image: url(../img/empresa-logo.png);
+    
+    /* Aseguramos que el fondo sea transparente y el logo se ajuste */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent; /* Aseguramos que no haya fondo de color */
+    
+    /* Ajustamos el tamaño del contenedor al logo */
+    height: 80px; /* Incrementamos un poco la altura para el nuevo logo */
+    width: 250px; /* Ancho suficiente para símbolo y texto */
+    
+    /* Removemos el borde superior por defecto de Keycloak si existe */
+    border-top: none;
+}
+
+.card-pf {
+    /* Usamos el color Azul Marino de tu marca */
+    border-top: 5px solid #001F5B; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
